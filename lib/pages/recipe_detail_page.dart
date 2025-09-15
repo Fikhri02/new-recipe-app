@@ -29,6 +29,12 @@ class RecipeDetailPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                context.goNamed('home');
+              },
+            ),
             expandedHeight: 280,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
@@ -106,7 +112,9 @@ class RecipeDetailPage extends StatelessWidget {
                   if (confirmed == true) {
                     Provider.of<RecipeProvider>(context, listen: false)
                         .deleteRecipe(recipeId);
-                    Navigator.pop(context);
+                    context.push(
+                      '/',
+                    );
                   }
                 },
               )

@@ -167,13 +167,12 @@ class _RecipeListPageState extends State<RecipeListPage> {
                         margin: EdgeInsets.symmetric(vertical: 8),
                         child: InkWell(
                           borderRadius: BorderRadius.circular(16),
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => RecipeDetailPage(
-                                  recipeId: r.id, types: types),
-                            ),
-                          ),
+                          onTap: () {
+                            context.go(
+                              '/recipe/detail/${r.id}',
+                              extra: types,
+                            );
+                          },
                           child: Row(
                             children: [
                               ClipRRect(

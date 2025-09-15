@@ -47,7 +47,10 @@ class RecipeApp extends StatelessWidget {
           //   return null;
           // },
           routes: [
-            GoRoute(path: '/', builder: (context, state) => RecipeListPage()),
+            GoRoute(
+                path: '/',
+                name: 'home',
+                builder: (context, state) => RecipeListPage()),
             GoRoute(
               path: '/recipe/detail/:id',
               builder: (context, state) {
